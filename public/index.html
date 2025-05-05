@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" initial-scale="1.0" />
+        <link rel="stylesheet" href="./styles/style.css`" />
+        <link rel="icon" type="image/svg+xml" href="./favicon/light.svg" id="faviconTag" />
+        <title>Test Task Resume</title>
+
+        <script type="module">
+            import { tabsComponent, toggleTheme, toggleFavicon } from './index.js';
+
+            tabsComponent({ tabsComponent: getById('tabs-container') });
+            toggleTheme({ toggleTheme: getById('toggle'), faviconTag: getById('faviconTag') });
+            toggleFavicon({ faviconTag: getById('faviconTag') });
+
+            function getById(id) {
+                const el = document.getElementById(id);
+                if (el === null) throw new Error(`${id} not found`);
+                return el;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <button class="theme" id="toggle" type="button">
+                    <svg class="toggle-icon" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17 10.3333C16.558 10.3333 16.1341 10.5089 15.8215 10.8215C15.5089 11.134 15.3333 11.558 15.3333 12C15.3333 12.442 15.5089 12.8659 15.8215 13.1785C16.1341 13.4911 16.558 13.6667 17 13.6667C17.8841 13.6667 18.7319 14.0179 19.357 14.643C19.9821 15.2681 20.3333 16.1159 20.3333 17C20.3333 17.8841 19.9821 18.7319 19.357 19.357C18.7319 19.9821 17.8841 20.3333 17 20.3333C16.558 20.3333 16.1341 20.5089 15.8215 20.8215C15.5089 21.134 15.3333 21.558 15.3333 22C15.3333 22.442 15.5089 22.8659 15.8215 23.1785C16.1341 23.4911 16.558 23.6667 17 23.6667C18.7681 23.6667 20.4638 22.9643 21.714 21.714C22.9643 20.4638 23.6667 18.7681 23.6667 17C23.6667 15.2319 22.9643 13.5362 21.714 12.286C20.4638 11.0357 18.7681 10.3333 17 10.3333ZM33.1833 15.8167L29.2667 12V6.4C29.2667 5.95797 29.0911 5.53405 28.7785 5.22149C28.466 4.90893 28.042 4.73333 27.6 4.73333H22.0833L18.1833 0.816667C18.0284 0.660453 17.8441 0.536462 17.641 0.451848C17.4379 0.367233 17.22 0.323669 17 0.323669C16.78 0.323669 16.5621 0.367233 16.359 0.451848C16.1559 0.536462 15.9716 0.660453 15.8167 0.816667L12 4.73333H6.4C5.95797 4.73333 5.53405 4.90893 5.22149 5.22149C4.90893 5.53405 4.73333 5.95797 4.73333 6.4V12L0.816667 15.8167C0.660453 15.9716 0.536462 16.1559 0.451848 16.359C0.367233 16.5621 0.323669 16.78 0.323669 17C0.323669 17.22 0.367233 17.4379 0.451848 17.641C0.536462 17.8441 0.660453 18.0284 0.816667 18.1833L4.73333 22.0833V27.6C4.73333 28.042 4.90893 28.4659 5.22149 28.7785C5.53405 29.0911 5.95797 29.2667 6.4 29.2667H12L15.9 33.1833C16.0549 33.3395 16.2393 33.4635 16.4424 33.5481C16.6455 33.6328 16.8633 33.6763 17.0833 33.6763C17.3034 33.6763 17.5212 33.6328 17.7243 33.5481C17.9274 33.4635 18.1117 33.3395 18.2667 33.1833L22.1667 29.2667H27.6833C28.1254 29.2667 28.5493 29.0911 28.8618 28.7785C29.1744 28.4659 29.35 28.042 29.35 27.6V22.0833L33.2667 18.1833C33.4176 18.023 33.5352 17.8343 33.6127 17.6282C33.6902 17.4221 33.7262 17.2027 33.7184 16.9826C33.7107 16.7626 33.6594 16.5462 33.5676 16.3461C33.4757 16.146 33.3451 15.966 33.1833 15.8167ZM26.4333 20.2167C26.2759 20.371 26.1506 20.5551 26.0647 20.7582C25.9789 20.9613 25.9343 21.1795 25.9333 21.4V25.9333H21.4C21.1795 25.9342 20.9613 25.9789 20.7582 26.0647C20.5551 26.1506 20.371 26.2759 20.2167 26.4333L17 29.65L13.7833 26.4333C13.629 26.2759 13.4449 26.1506 13.2418 26.0647C13.0387 25.9789 12.8205 25.9342 12.6 25.9333H8.06667V21.4C8.06575 21.1795 8.02109 20.9613 7.93526 20.7582C7.84943 20.5551 7.72415 20.371 7.56667 20.2167L4.35 17L7.56667 13.7833C7.72415 13.629 7.84943 13.4449 7.93526 13.2418C8.02109 13.0386 8.06575 12.8205 8.06667 12.6V8.06667H12.6C12.8205 8.06575 13.0387 8.02108 13.2418 7.93526C13.4449 7.84943 13.629 7.72415 13.7833 7.56667L17 4.35L20.2167 7.56667C20.371 7.72415 20.5551 7.84943 20.7582 7.93526C20.9613 8.02108 21.1795 8.06575 21.4 8.06667H25.9333V12.6C25.9343 12.8205 25.9789 13.0386 26.0647 13.2418C26.1506 13.4449 26.2759 13.629 26.4333 13.7833L29.65 17L26.4333 20.2167Z"
+                        />
+                    </svg>
+                </button>
+            </header>
+
+            <div class="img-box">
+                <div class="img-circle">
+                    <img src="./photo.jpg" alt="Yevhenii photo" />
+                </div>
+            </div>
+
+            <h1 class="title">Yevhenii Troshchynskyii</h1>
+            <h2 class="subtitle">Frontend Developer</h2>
+
+            <ul class="social">
+                <li>
+                    <a
+                        href="https://github.com/uncle-Yevhenii"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <svg
+                            class="social-icon"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M10 0.246696C7.6255 0.246795 5.32849 1.09181 3.51999 2.63054C1.71149 4.16928 0.509528 6.30132 0.12916 8.64518C-0.251207 10.989 0.214845 13.3918 1.44393 15.4235C2.67301 17.4551 4.58491 18.9832 6.83755 19.7342C7.33755 19.8217 7.52505 19.5217 7.52505 19.2592C7.52505 19.0217 7.51254 18.2342 7.51254 17.3967C5.00003 17.8592 4.35003 16.7842 4.15003 16.2217C3.9281 15.6747 3.5763 15.1898 3.12503 14.8092C2.77503 14.6217 2.27503 14.1592 3.11252 14.1467C3.4323 14.1814 3.73901 14.2927 4.00666 14.4711C4.2743 14.6495 4.49499 14.8898 4.65003 15.1717C4.7868 15.4174 4.97071 15.6337 5.19122 15.8082C5.41173 15.9827 5.6645 16.112 5.93506 16.1886C6.20562 16.2652 6.48864 16.2877 6.76791 16.2548C7.04717 16.2219 7.3172 16.1342 7.56251 15.9967C7.6058 15.4883 7.83237 15.013 8.20003 14.6592C5.97503 14.4092 3.65003 13.5467 3.65003 9.72173C3.63597 8.72787 4.00271 7.7663 4.67503 7.03423C4.36931 6.17045 4.40508 5.22251 4.77503 4.38423C4.77503 4.38423 5.6125 4.12172 7.52503 5.40923C9.16131 4.9592 10.8887 4.9592 12.525 5.40923C14.4375 4.10923 15.275 4.38423 15.275 4.38423C15.645 5.2225 15.6808 6.17045 15.375 7.03423C16.0494 7.76505 16.4164 8.72746 16.4 9.72173C16.4 13.5592 14.0625 14.4092 11.8375 14.6592C12.0762 14.9011 12.26 15.1915 12.3764 15.5107C12.4929 15.8299 12.5393 16.1705 12.5125 16.5092C12.5125 17.8467 12.5 18.9217 12.5 19.2592C12.5 19.5217 12.6875 19.8342 13.1875 19.7342C15.4362 18.9771 17.3426 17.4455 18.5664 15.4127C19.7903 13.38 20.2519 10.9785 19.8689 8.63693C19.4859 6.29534 18.2832 4.16607 16.4755 2.62921C14.6678 1.09235 12.3727 0.247931 10 0.246696Z"
+                            />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/yevhenii-troshchynskyi/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <svg
+                            class="social-icon"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M20.4701 2H3.53006C3.33964 1.99736 3.15056 2.03225 2.97362 2.10269C2.79669 2.17312 2.63536 2.27772 2.49886 2.41051C2.36235 2.54331 2.25334 2.70169 2.17805 2.87661C2.10276 3.05154 2.06267 3.23958 2.06006 3.43V20.57C2.06267 20.7604 2.10276 20.9485 2.17805 21.1234C2.25334 21.2983 2.36235 21.4567 2.49886 21.5895C2.63536 21.7223 2.79669 21.8269 2.97362 21.8973C3.15056 21.9678 3.33964 22.0026 3.53006 22H20.4701C20.6605 22.0026 20.8496 21.9678 21.0265 21.8973C21.2034 21.8269 21.3648 21.7223 21.5013 21.5895C21.6378 21.4567 21.7468 21.2983 21.8221 21.1234C21.8974 20.9485 21.9375 20.7604 21.9401 20.57V3.43C21.9375 3.23958 21.8974 3.05154 21.8221 2.87661C21.7468 2.70169 21.6378 2.54331 21.5013 2.41051C21.3648 2.27772 21.2034 2.17312 21.0265 2.10269C20.8496 2.03225 20.6605 1.99736 20.4701 2ZM8.09006 18.74H5.09006V9.74H8.09006V18.74ZM6.59006 8.48C6.17632 8.48 5.77953 8.31565 5.48697 8.02309C5.19442 7.73053 5.03006 7.33374 5.03006 6.92C5.03006 6.50626 5.19442 6.10947 5.48697 5.81692C5.77953 5.52436 6.17632 5.36 6.59006 5.36C6.80975 5.33509 7.03224 5.35686 7.24293 5.42389C7.45363 5.49092 7.6478 5.60169 7.81272 5.74896C7.97763 5.89624 8.10958 6.07668 8.19993 6.27848C8.29028 6.48029 8.33698 6.6989 8.33698 6.92C8.33698 7.14111 8.29028 7.35972 8.19993 7.56152C8.10958 7.76332 7.97763 7.94377 7.81272 8.09104C7.6478 8.23831 7.45363 8.34909 7.24293 8.41612C7.03224 8.48315 6.80975 8.50492 6.59006 8.48ZM18.9101 18.74H15.9101V13.91C15.9101 12.7 15.4801 11.91 14.3901 11.91C14.0527 11.9125 13.7242 12.0183 13.4489 12.2132C13.1735 12.4081 12.9645 12.6827 12.8501 13C12.7718 13.235 12.7379 13.4826 12.7501 13.73V18.73H9.75006C9.75006 18.73 9.75006 10.55 9.75006 9.73H12.7501V11C13.0226 10.5271 13.419 10.1375 13.8965 9.8732C14.374 9.60889 14.9146 9.47985 15.4601 9.5C17.4601 9.5 18.9101 10.79 18.9101 13.56V18.74Z"
+                            />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="buttons">
+                <a
+                    class="btn"
+                    href="https://drive.google.com/file/d/1xxZRLUobdGtgfQ7X9gyIWdUqllnTiyg3/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Download CV
+                </a>
+
+                <a
+                    class="btn"
+                    href="https://t.me/Yvheniii"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Contact me
+                </a>
+            </div>
+
+            <div class="tabs-container" id="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-button active" data-tab="experience">Experience</button>
+                    <button class="tab-button" data-tab="skills">Skills & Education</button>
+                </div>
+                <div class="tab-content active" id="experience">
+                    <h2 class="experience-title">FRONTEND / FULLSTACK DEVELOPER</h2>
+                    <p class="experience-subtitle">January 2025 - February 2025</p>
+                    <p class="experience-subtitle">SoftServe</p>
+                    <ul class="experience-list">
+                        <li class="experience-item">
+                            <span>UI / Components</span> : Developed and maintained reusable,
+                            responsive UI components using React, TypeScript, and MUI, strictly
+                            following Figma design guidelines.
+                        </li>
+                        <li class="experience-item">
+                            <span>Forms & Validation:</span> Built dynamic and user-friendly forms
+                            with React Hook Form and validated inputs using Zod for schema-based
+                            validation.
+                        </li>
+                        <li class="experience-item">
+                            <span>Routing & Navigation:</span> Implemented client-side routing and
+                            protected routes using React Router DOM for seamless navigation
+                            experience.
+                        </li>
+                        <li class="experience-item">
+                            <span>Internationalization:</span> Integrated multilingual support using
+                            i18next, enabling language switching and localization across the
+                            application.
+                        </li>
+                        <li class="experience-item">
+                            <span>API & Logic:</span> Developed RESTful APIs with Node.js, Express,
+                            and Mongoose, implementing complete client- server communication logic
+                            using Axios.
+                        </li>
+                        <li class="experience-item">
+                            <span>Documentation:</span> Created API documentation and request
+                            collections using Swagger and Postman to ensure clear developer
+                            communication.
+                        </li>
+                        <li class="experience-item">
+                            <span>Testing:</span> Wrote unit tests with Jest to ensure component and
+                            logic reliability, covering both frontend and backend modules.
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="skills">
+                    <h2 class="education-title">EDUCATION</h2>
+                    <ul class="education-list">
+                        <li class="education-item">
+                            <a
+                                href="https://drive.google.com/file/d/1B5jJLzOgR8dSl3y5-4tn5bdDJsZeAHJ6/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <p class="education-title-list">CHI IT Academy</p>
+                                <p class="education-subtitle">December 2024</p>
+                                <p class="education-subtitle">
+                                    FullStack JS Project-Based Learning
+                                </p>
+                            </a>
+                        </li>
+                        <li class="education-item">
+                            <a
+                                href="https://testprovider.com/ru/search-certificate/tp74985066"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <p class="education-title-list">ITVDN - IT</p>
+                                <p class="education-subtitle">June 2024</p>
+                                <p class="education-subtitle">
+                                    The basic of using GitThe basic of using Git
+                                </p>
+                            </a>
+                        </li>
+                        <li class="education-item">
+                            <a
+                                href="https://drive.google.com/file/d/10dAy-kUSRGm8fUE6VJYcsq7qDxEiMFD0/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <p class="education-title-list">IT School GoIT</p>
+                                <p class="education-subtitle">2023 - 2024</p>
+                                <p class="education-subtitle">Fullstack Developer</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h2 class="skills-title">Tech Skills</h2>
+                    <ul class="skills-list">
+                        <li class="skills-item">HTML5 / CSS3.</li>
+                        <li class="skills-item">Responsive Web Design.</li>
+                        <li class="skills-item">Basic SEO.</li>
+                        <li class="skills-item">Version Control (Git, GitHub).</li>
+                        <li class="skills-item">JavaScript (ES6+).</li>
+                        <li class="skills-item">TypeScript.</li>
+                        <li class="skills-item">React.js and JSX.</li>
+                        <li class="skills-item">Redux.js and Redux Toolkit.</li>
+                        <li class="skills-item">Basic knowledge of Angular.</li>
+                        <li class="skills-item">
+                            CSS frameworks (Chakra-U, Tailwind CSS, Material-U).
+                        </li>
+                        <li class="skills-item">
+                            Advanced knowledge of Backend technologies like Node.js. MongoDB /
+                            PostgreSQL.
+                        </li>
+                        <li class="skills-item">Basic knowledge of UX/UI.</li>
+                        <li class="skills-item">
+                            Time Management and Collaboration Tools (Slack, Jira).
+                        </li>
+                        <li class="skills-item">
+                            Skilled in using artificial intelligence tools to enhance productivity
+                            and problem solving.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer">
+                <span class="footer-text">© 2025 Yevhenii Troshchynskyii</span>
+                <span class="footer-text">All rights reserved</span>
+            </div>
+        </div>
+    </body>
+</html>

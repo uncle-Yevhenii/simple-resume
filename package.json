@@ -1,0 +1,19 @@
+{
+    "name": "resume-test-task",
+    "version": "1.0.0",
+    "scripts": {
+        "prettier": "prettier --write .",
+        "clean": "rm -rf dist",
+        "copy": "cp -r public/index.html dist/ && cp -r public/styles/ dist/ && cp -r public/photo.jpg dist/ && cp -r public/favicon/ dist/",
+        "build": "npm run clean && tsc && npm run copy",
+        "start": "npm run build && npx serve dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "",
+    "description": "",
+    "devDependencies": {
+        "prettier": "3.5.3",
+        "typescript": "^5.8.3"
+    }
+}

@@ -1,0 +1,244 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --background: #e9ebec;
+    --wrapper: #fff;
+    --text: #3d3d3d;
+    --text-light: #575757;
+    --contrast: #f7d039;
+    --active-tab: #d7d7d7;
+    .dark_mode {
+        --background: #0c151d;
+        --wrapper: #171f26;
+        --text: #f1f2f4;
+        --text-light: #a3abb2;
+        --contrast: #ffe071;
+        --active-tab: #0c151d;
+    }
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.container {
+    max-width: calc(375px - 20px);
+    margin: 0 auto;
+    padding: 20px 20px 40px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+.theme {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--wrapper);
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+.toggle-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text);
+
+    transition: all 0.2s ease;
+}
+.toggle-icon:hover,
+.toggle-icon:focus {
+    fill: var(--contrast);
+}
+
+.img-box {
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    border: 4px solid var(--contrast);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+}
+.img-circle {
+    width: 107px;
+    height: 107px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.img-circle > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    margin-top: 40px;
+    font-size: 32px;
+    text-align: center;
+    color: var(--text);
+}
+.subtitle {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+.social-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--text);
+
+    transition: all 0.2s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+    fill: var(--contrast);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 14px;
+}
+.btn {
+    border-radius: 10px;
+    padding: 15px 30px;
+    background-color: var(--wrapper);
+    color: var(--text);
+
+    transition: all 0.2s ease;
+}
+.btn:hover,
+.btn:focus {
+    background-color: var(--contrast);
+    color: var(--wrapper);
+}
+
+.tabs-container {
+    margin-top: 40px;
+}
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    background-color: var(--wrapper);
+    border-radius: 10px;
+    padding: 5px 2px;
+    color: var(--text);
+}
+.tab-button {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-light);
+    background-color: var(--wrapper);
+    border: none;
+    border-radius: 10px;
+
+    padding: 15px;
+
+    width: 154px;
+
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.tab-button:hover,
+.tab-button:focus {
+    color: var(--text);
+}
+
+.tab-button.active {
+    background: var(--active-tab);
+}
+.tab-content {
+    margin-top: 30px;
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+.experience-title,
+.education-title,
+.skills-title {
+    font-size: 16px;
+    text-align: center;
+    color: var(--text);
+}
+
+.skills-title {
+    margin-top: 20px;
+}
+
+.experience-subtitle,
+.education-subtitle {
+    margin-top: 5px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-light);
+}
+.experience-list,
+.education-list,
+.skills-list {
+    list-style: disc;
+    margin-top: 20px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+.experience-item,
+.education-item,
+.skills-item {
+    font-size: 14px;
+    color: var(--text);
+}
+.experience-item,
+.education-item,
+.skills-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+.experience-item > span {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.education-title-list {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text);
+}
